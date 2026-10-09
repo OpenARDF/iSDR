@@ -11,6 +11,7 @@ ios_deploy_error := "/tmp/isdr-ios-deploy.err"
 test_build_dir := "/tmp/isdr-tests"
 test_binary := test_build_dir + "/dsp-core-tests"
 spectrum_test_binary := test_build_dir + "/spectrum-analysis-tests"
+development_team := env_var_or_default("ISDR_DEVELOPMENT_TEAM", "")
 
 # Show the targets, configurations, and shared schemes Xcode recognizes.
 list:
@@ -50,9 +51,11 @@ public-release-check: provenance-check check analyze
 public-snapshot destination:
     ./Scripts/export-public-snapshot.sh "{{destination}}"
 
-# Produce a signed build that remains compatible with the iOS 15 test iPad.
+# Produce a signed build that remains compatible with iOS 15 devices.
 device-build-ios15:
-    DEVELOPER_DIR={{xcode_26_6}} xcodebuild -quiet -project {{project}} -scheme "{{scheme}}" -configuration Debug -sdk iphoneos -destination "generic/platform=iOS" -derivedDataPath {{device_derived_data}} GCC_TREAT_WARNINGS_AS_ERRORS=YES -allowProvisioningUpdates clean build
+    # Signing belongs to the developer's Apple account, so no team identifier is versioned.
+    @test -n "{{development_team}}" || (echo 'Set ISDR_DEVELOPMENT_TEAM to an Apple development team identifier.' >&2; exit 1)
+    DEVELOPER_DIR={{xcode_26_6}} xcodebuild -quiet -project {{project}} -scheme "{{scheme}}" -configuration Debug -sdk iphoneos -destination "generic/platform=iOS" -derivedDataPath {{device_derived_data}} DEVELOPMENT_TEAM={{development_team}} GCC_TREAT_WARNINGS_AS_ERRORS=YES -allowProvisioningUpdates clean build
 
 # Install and launch the signed build over USB without printing the device identifier.
 device-install-ios15: device-build-ios15
@@ -60,4 +63,4 @@ device-install-ios15: device-build-ios15
     -DEVELOPER_DIR={{xcode_26_6}} {{ios_deploy}} --no-wifi --bundle {{device_test_app}} --justlaunch --timeout 15 > {{ios_deploy_output}} 2> {{ios_deploy_error}}
     @rg -q '^\[100%\] Installed package ' {{ios_deploy_output}}
     @rg -q '^success$' {{ios_deploy_output}}
-    @echo 'Installed and launched iSDR Dev on the attached iOS 15 device.'
+    @echo 'Installed and launched iSDR Dev on an attached iOS 15 device.'

@@ -2,7 +2,6 @@
 //  PlusMinusButton.m
 //  iKX3
 //
-//  Created by Charles Scharlau on 5/6/14.
 //  Copyright (c) 2009-2026 OpenARDF. Licensed under the MIT License.
 //
 

@@ -2,7 +2,6 @@
 //  FileHandler.h
 //  iSDR
 //
-//  Created by Charles Scharlau on 1/17/11.
 //  Copyright (c) 2011-2026 OpenARDF. Licensed under the MIT License.
 //
 

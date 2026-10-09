@@ -2,7 +2,6 @@
 //  WifiInterface.h
 //  iSDR
 //
-//  Created by Charles Scharlau on 10/21/10.
 //  Copyright (c) 2011-2026 OpenARDF. Licensed under the MIT License.
 //
 
