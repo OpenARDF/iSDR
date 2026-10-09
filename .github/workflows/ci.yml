@@ -44,7 +44,7 @@ jobs:
       - name: Install repository tools
         env:
           HOMEBREW_NO_AUTO_UPDATE: "1"
-        run: brew install just gitleaks
+        run: brew install just gitleaks ripgrep
 
       - name: Report toolchain
         run: xcodebuild -version
