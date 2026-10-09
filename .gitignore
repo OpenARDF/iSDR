@@ -1,0 +1,19 @@
+# Finder and Xcode-generated files
+.DS_Store
+DerivedData/
+build/
+
+# Per-user Xcode state
+*.pbxuser
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
+# Generated Xcode output
+*.build/
+*.xcclassmodel/

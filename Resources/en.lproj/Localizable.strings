@@ -1,0 +1,28 @@
+"AboutViewTitle" = "About";
+"TextViewTitle" = "Instructions";
+"CenterFreqTitle" = "Center Frequency";
+"ModePickerTitle" = "Receiver Mode";
+"FilesTitle" = "Files";
+"WebTitle" = "Web";
+"AboutTitle" = "About";
+"OffLineModeON" = "Off Line (recorded audio only)";
+"OffLineModeOFF" = "Mic Input Used (if available)";
+"ReverseIQOFF" = "I/Q: Default logic";
+"ReverseIQON" = "I/Q: Inverted";
+"WiFiEnabled" = "WiFi: Enabled";
+"WiFiDisabled" = "WiFi: Disabled";
+
+"StartTitle" = "Start";
+"StopTitle" = "Stop";
+
+"StyleTitle" = "Style";
+"ChooseStyleTitle" = "Choose a UIBarStyle for the bottom toolbar:";
+
+"FlipTitle" = "Flip Image";
+"CurlTitle" = "Curl Image";
+
+"LeftView" = "Left View:";
+
+"RoundedTextField" = "Filter Bandwidth";
+"NormalTextField" = "Frequency";
+"URLTextField" = "URL entry";

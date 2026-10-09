@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController">
+            <connections>
+                <outlet property="textViewBuild" destination="20" id="31"/>
+                <outlet property="textViewInstructions" destination="24" id="32"/>
+                <outlet property="textViewVersion" destination="16" id="30"/>
+                <outlet property="view" destination="33" id="35"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="33">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <userGuides>
+                <userLayoutGuide location="538" affinity="minX"/>
+            </userGuides>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="38">
+                    <rect key="frame" x="20" y="40" width="78" height="72"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="78" id="AJw-0P-vrd"/>
+                    </constraints>
+                </imageView>
+                <textView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="16">
+                    <rect key="frame" x="106" y="40" width="432" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="F81-hZ-Fba"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="Lorem ipsum dolor sit er elit">
+                            <attributes>
+                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="22"/>
+                    </connections>
+                </textView>
+                <textView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="20">
+                    <rect key="frame" x="106" y="60" width="432" height="32"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Lorem ipsum dolor sit er elit">
+                            <attributes>
+                                <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="23"/>
+                    </connections>
+                </textView>
+                <scrollView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpX-M6-Hyy">
+                    <rect key="frame" x="20" y="120" width="460" height="192"/>
+                    <subviews>
+                        <textView clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24">
+                            <rect key="frame" x="0.0" y="0.0" width="460" height="192"/>
+                            <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
+</string>
+                                    <attributes>
+                                        <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <textInputTraits key="textInputTraits"/>
+                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="29"/>
+                            </connections>
+                        </textView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="24" firstAttribute="top" secondItem="CpX-M6-Hyy" secondAttribute="top" id="1rx-Tj-A50"/>
+                        <constraint firstAttribute="bottom" secondItem="24" secondAttribute="bottom" id="30g-Tp-99B"/>
+                        <constraint firstItem="24" firstAttribute="leading" secondItem="CpX-M6-Hyy" secondAttribute="leading" id="7qI-bW-gxu"/>
+                        <constraint firstItem="24" firstAttribute="centerX" secondItem="CpX-M6-Hyy" secondAttribute="centerX" id="Rpf-7g-Mox"/>
+                        <constraint firstAttribute="trailing" secondItem="24" secondAttribute="trailing" id="m9K-HR-TaO"/>
+                        <constraint firstItem="24" firstAttribute="centerY" secondItem="CpX-M6-Hyy" secondAttribute="centerY" id="ngF-9W-msc"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="0.2396625141" green="1" blue="0.58941978299999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="0.5"/>
+            <constraints>
+                <constraint firstItem="20" firstAttribute="leading" secondItem="16" secondAttribute="leading" id="31H-ah-Hrk"/>
+                <constraint firstItem="38" firstAttribute="leading" secondItem="CpX-M6-Hyy" secondAttribute="leading" id="Aj6-Wv-kqB"/>
+                <constraint firstItem="38" firstAttribute="top" secondItem="33" secondAttribute="top" constant="40" id="Dhv-DF-nrk"/>
+                <constraint firstItem="CpX-M6-Hyy" firstAttribute="top" secondItem="16" secondAttribute="bottom" constant="48" id="Kvj-ce-eIK"/>
+                <constraint firstItem="CpX-M6-Hyy" firstAttribute="top" secondItem="20" secondAttribute="bottom" constant="28" id="TTx-fE-e9s"/>
+                <constraint firstItem="16" firstAttribute="leading" secondItem="38" secondAttribute="trailing" constant="8" symbolic="YES" id="V20-qE-jZA"/>
+                <constraint firstItem="CpX-M6-Hyy" firstAttribute="bottom" secondItem="33" secondAttribute="bottomMargin" id="VCP-Op-KVZ"/>
+                <constraint firstItem="20" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" id="f0P-15-sf3"/>
+                <constraint firstAttribute="trailing" secondItem="CpX-M6-Hyy" secondAttribute="trailing" id="ffD-BZ-0BS"/>
+                <constraint firstItem="CpX-M6-Hyy" firstAttribute="top" secondItem="38" secondAttribute="bottom" constant="8" symbolic="YES" id="iXA-RX-92a"/>
+                <constraint firstItem="38" firstAttribute="leading" secondItem="33" secondAttribute="leading" constant="20" id="kK0-bR-QTY"/>
+                <constraint firstAttribute="trailing" secondItem="16" secondAttribute="trailing" constant="-58" id="qIT-9d-yPF"/>
+                <constraint firstItem="38" firstAttribute="top" secondItem="16" secondAttribute="top" id="wk0-E3-oVP"/>
+                <constraint firstItem="38" firstAttribute="centerY" secondItem="20" secondAttribute="centerY" id="xli-mY-jdA"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="410" y="301"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Icon.png" width="57" height="57"/>
+    </resources>
+</document>
