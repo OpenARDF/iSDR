@@ -1,0 +1,53 @@
+name: iSDR CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate (${{ matrix.label }})
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    # The Xcode 27 runner is advisory until GitHub promotes it from preview.
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: Stable Xcode 26.6
+            runner: macos-26
+            developer_dir: /Applications/Xcode_26.6.app/Contents/Developer
+            experimental: false
+          - label: Latest Xcode 27
+            runner: xcode-27
+            developer_dir: /Applications/Xcode.app/Contents/Developer
+            experimental: true
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Select Xcode
+        run: sudo xcode-select --switch "${{ matrix.developer_dir }}"
+
+      - name: Install repository tools
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: "1"
+        run: brew install just gitleaks ripgrep
+
+      - name: Report toolchain
+        run: xcodebuild -version
+
+      - name: Run public release gate
+        run: just public-release-check

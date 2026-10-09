@@ -1,0 +1,5 @@
+# GitHub's xcode-27 hosted runner is newer than actionlint 1.7.12's label list.
+paths:
+  .github/workflows/ci.yml:
+    ignore:
+      - 'label "xcode-27" is unknown'
