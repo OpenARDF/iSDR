@@ -6,11 +6,10 @@ opinion.
 
 ## Ownership basis
 
-Charles Scharlau, manager and sole owner of Digital Confections, designated
-Digital Confections-owned iSDR code as OpenARDF open source under the MIT
-License. Files carrying OpenARDF or Digital Confections ownership notices are
-therefore treated as OpenARDF-owned unless stronger file-specific evidence
-identifies third-party portions.
+Digital Confections' manager and sole owner designated the company's iSDR code
+as OpenARDF open source under the MIT License. Files carrying OpenARDF or
+Digital Confections ownership notices are therefore treated as OpenARDF-owned
+unless stronger file-specific evidence identifies third-party portions.
 
 The earlier RIM attribution in `FileSharing/FileHandler.m` was corrected
 because the owner confirmed that no RIM code was used.

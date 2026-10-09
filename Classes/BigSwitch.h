@@ -2,7 +2,6 @@
 //  BigSwitch.h
 //  iSDR
 //
-//  Created by Charles Scharlau on 4/23/14.
 //  Copyright (c) 2009-2026 OpenARDF. Licensed under the MIT License.
 //
 

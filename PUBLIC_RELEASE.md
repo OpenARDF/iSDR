@@ -1,27 +1,22 @@
-# Public repository handoff
+# Public repository boundary
 
-ISDR-R012 is cleared for the current sanitized source snapshot, subject to the
-remaining release process below. The private recovery repository itself is not
-cleared for public visibility because its historical objects and refs still
-contain files removed for lack of a redistribution license.
+This repository was created from the ISDR-R012-cleared source snapshot as a new
+Git root. It does not contain the private recovery repository's historical
+objects, refs, reflogs, bundles, or archives.
 
-## Required release model
+The separate recovery archive is not cleared for public visibility because its
+history preserves files that were removed for lack of a redistribution
+license.
 
-1. Keep this recovery repository private as the historical archive.
-2. Finish and commit the sanitized tree, then run `just public-release-check`.
-3. Export that exact clean commit with:
+## Reproducing a sanitized export
 
-   ```sh
-   just public-snapshot /absolute/path/to/new-empty-directory
-   ```
+Run the complete release gate before exporting a future snapshot:
 
-4. Initialize a new Git repository in the exported directory and make one root
-   commit. Do not copy this repository's `.git` directory, tags, branches,
-   reflogs, bundles, or archives.
-5. Run `just public-release-check` again in the new repository before making
-   it public.
-6. Confirm the public repository's name and the private archive's final name
-   before changing any GitHub visibility or remotes.
+```sh
+just public-release-check
+just public-snapshot /absolute/path/to/new-empty-directory
+```
 
-This preserves the recovered history privately while publishing only the
-source set covered by the licensing record in [PROVENANCE.md](PROVENANCE.md).
+The export contains only the source set covered by the licensing record in
+[PROVENANCE.md](PROVENANCE.md). If it is used to create another repository, do
+not copy Git metadata from the private recovery archive.

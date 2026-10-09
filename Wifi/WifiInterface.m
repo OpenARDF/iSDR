@@ -5,9 +5,6 @@
 //
 //  WifiInterface.m
 //
-//  Created by Charles Scharlau.
-//
-
 #import "WifiInterface.h"
 #include <ifaddrs.h>
 #include <arpa/inet.h>

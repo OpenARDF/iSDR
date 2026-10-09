@@ -30,7 +30,7 @@ Abstract: Helper class for printing debug messages
  STRICT LIABILITY OR OTHERWISE, EVEN IF OPENARDF HAS BEEN
  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
- Copyright (c) 2011 Charles Scharlau - NZ0I. Licensed under the MIT License.
+ Copyright (c) 2011 Digital Confections. Licensed under the MIT License.
 
 
 */

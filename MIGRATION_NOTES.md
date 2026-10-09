@@ -2,13 +2,12 @@
 
 ## Source of this snapshot
 
-The source was recovered from `Developer/Projects/SDR Development/iSDR` on
-Charles's MacBook Pro. The original folder was read and copied without being
-modified.
+The source was recovered from the latest available iSDR working tree. The
+original folder was read and copied without being modified.
 
 The recovered Xcode project reports version 5.1, build 115. A matching App
-Store archive, `iSDR AppStore 11-24-19, 4.06 PM.xcarchive`, also reports 5.1
-build 115. An earlier October 24 archive reports 5.1 build 114.
+Store archive from November 24, 2019 also reports 5.1 build 115. An earlier
+October 24 archive reports 5.1 build 114.
 
 The old repository's `master` ref ends at commit
 `b9618432bed652cdd5cd467f9a11c6187124e1e3`, whose reflog message is “IOS 9
@@ -80,15 +79,16 @@ does not establish correct radio operation on physical hardware.
 - Assigned the first device-test build version `5.1.0a` and build number 116.
   The Apple-required numeric bundle version remains `5.1.0`; the About screen
   reads a separate display-version key so OpenARDF test suffixes remain visible.
-- Verified that Xcode 26.6 can compile an unsigned Debug build for the attached
-  iPad Air 2 running iOS 15.8.5.
-- Created an Apple Development certificate and automatic team provisioning
-  profile, then completed a warning-clean signed arm64 build with Xcode 26.6.
+- Verified that Xcode 26.6 can compile an unsigned Debug build targeting iOS
+  15.
+- Completed a warning-clean signed arm64 build with Xcode 26.6 using automatic
+  development provisioning.
 - Installed `org.openardf.isdr.dev` over USB without replacing the App Store
   bundle. A debugger-assisted launch reached the audio setup path and remained
   alive through the launch-observation interval without a crash report.
-- A hands-on check confirmed that the recovered interface remained stable on
-  the iPad and that monophonic microphone input worked correctly.
+- A hands-on check on physical iOS 15 hardware confirmed that the recovered
+  interface remained stable and that monophonic microphone input worked
+  correctly.
 
 The command-line launcher intentionally stops the debugged process when its
 observation interval ends. The bundled stereo recording exercises the
@@ -124,13 +124,13 @@ hardware and networking also remain deferred.
   phone simulator. Safe-area polish on new device shapes is intentionally part
   of the later layout phase.
 - Added `just device-build-ios15` and `just device-install-ios15` as the
-  repeatable Xcode 26.6 signed-build and USB-install workflow for the legacy
-  test device. Deployment logs are captured so the device identifier is not
+  repeatable Xcode 26.6 signed-build and USB-install workflow for iOS 15 test
+  devices. Deployment logs are captured so the device identifier is not
   printed during normal use.
-- Built, signed, installed, and launched `iSDR Dev` 5.1.0b (build 117) on the
-  iPad Air 2 running iOS 15.8.5 through that workflow.
-- A hands-on check confirmed that build 117 runs normally on the iPad and that
-  its bundled stereo sample reaches both the spectrum display and speaker.
+- Built, signed, installed, and launched `iSDR Dev` 5.1.0b (build 117) on
+  physical iOS 15 hardware through that workflow.
+- A hands-on check confirmed that build 117 runs normally and that its bundled
+  stereo sample reaches both the spectrum display and speaker.
 
 The current simulator cannot synthesize a real audio interruption. Hands-on
 interruption recovery, live stereo input, and radio communication remain
@@ -184,10 +184,10 @@ the next characterization targets.
   both sanitizer-backed test executables, warning-clean simulator and unsigned
   device builds, Clang static analysis, and a gitleaks working-tree scan.
 
-The source snapshot is cleared for a public repository after the release gate
-passes. The existing recovery repository must stay private because its Git
-history and preserved refs still contain the removed files. The public
-repository must start from the clean export described in `PUBLIC_RELEASE.md`.
+The source snapshot passed the release gate and was published from a new Git
+root. The separate recovery archive remains private because its historical Git
+objects and preserved refs still contain files that are not part of this public
+source set. See `PUBLIC_RELEASE.md` for that boundary.
 
 ## Explicit compatibility waivers
 
@@ -199,10 +199,10 @@ repository must start from the clean export described in `PUBLIC_RELEASE.md`.
   deprecated Secure Transport APIs. Only `GCDAsyncSocket.m` receives
   `-Wno-deprecated-declarations`. A future networking phase should update the
   dependency or replace its TLS path with Network.framework.
-- **Xcode 26.6 device discovery:** while the attached iOS 15.8.5 iPad is
-  connected, Xcode emits `DVTDeviceOperation` diagnostics about an empty build
-  number before otherwise successful builds. This is an Xcode host diagnostic,
-  not a compiler warning; the signed arm64 product still builds and validates.
+- **Xcode 26.6 device discovery:** with an older iOS device connected, Xcode can
+  emit `DVTDeviceOperation` diagnostics about an empty build number before an
+  otherwise successful build. This is an Xcode host diagnostic, not a compiler
+  warning; the signed arm64 product still builds and validates.
 
 These are categorical, documented waivers; every other compiler warning is an
 error in `just check`.
@@ -217,6 +217,5 @@ error in `just check`.
 4. Audit App Store privacy, signing, entitlements, accessibility, and current
    review requirements only after functional hardware validation.
 
-The sanitized source snapshot has a documented public-release path. Follow
-[PUBLIC_RELEASE.md](PUBLIC_RELEASE.md); do not change the recovery repository's
-visibility or publish its historical refs.
+This repository is the sanitized public source snapshot. Keep the separate
+recovery archive private and do not publish its historical refs.
