@@ -50,15 +50,14 @@ themselves as public-domain code created and maintained by Robbie Hanson,
 Deusty LLC, and the Apple development community. Their original notices
 remain in the files.
 
-## Removed unresolved material
+## Excluded unresolved material
 
-The current working tree no longer contains `SimplePingHelper`, whose public
-upstream carried no redistribution license, or `DeviceHardware`, whose public
-upstream declared no license. The unused Apple `SimplePing` copies were also
-removed so the public snapshot contains no dormant ping implementation.
+This public repository excludes `SimplePingHelper`, whose public upstream
+carried no redistribution license, and `DeviceHardware`, whose public upstream
+declared no license. The unused Apple `SimplePing` copies were also excluded so
+the repository contains no dormant ping implementation.
 
-Those files remain reachable in this private recovery repository's historical
-objects and recovery refs. Accordingly, this repository and its existing Git
-history must remain private. A public repository must begin with a new root
-commit made from the sanitized snapshot, as described in
-[PUBLIC_RELEASE.md](PUBLIC_RELEASE.md).
+These files were removed before this public repository's initial root commit
+and are not present in its Git history. The separate private recovery archive
+retains historical evidence that is outside this repository's cleared source
+set, as described in [PUBLIC_RELEASE.md](PUBLIC_RELEASE.md).

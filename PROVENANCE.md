@@ -43,8 +43,8 @@ a working-tree secret scan.
 
 ## Historical boundary
 
-The existing Git object database, tags, branches, and remote refs preserve the
-recovered snapshots and therefore still contain the removed files. They are
-not part of the cleared public source set. Public release requires a new Git
-root created from a clean export of a validated commit; it must not publish or
-mirror this repository's existing refs.
+This public repository began with a new Git root created from a validated,
+sanitized export. Its objects, tags, branches, and remote refs do not contain
+the excluded unresolved files. The separate private recovery archive retains
+the recovered historical evidence and must not be published or mirrored into
+this repository.

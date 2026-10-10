@@ -68,7 +68,5 @@ gitleaks working-tree scan.
    background/foreground stress on the iOS 15 device; add Thread Sanitizer
    coverage wherever Apple's audio stack permits it.
 2. Add the fake-radio protocol harness for R011, then test the real interface.
-3. Create the clean-root public repository from a validated sanitized snapshot;
-   do not publish this private recovery repository's historical refs.
-4. Begin layout, Metal, and socket-framework modernization with the DSP and
+3. Begin layout, Metal, and socket-framework modernization with the DSP and
    cursor tests retained as regression gates.

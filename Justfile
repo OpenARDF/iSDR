@@ -47,7 +47,7 @@ provenance-check:
 public-release-check: provenance-check check analyze
     gitleaks dir --redact --no-banner .
 
-# Export a validated commit without this private recovery repository's Git history.
+# Export a validated source snapshot without Git metadata.
 public-snapshot destination:
     ./Scripts/export-public-snapshot.sh "{{destination}}"
 
